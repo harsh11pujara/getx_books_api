@@ -73,6 +73,7 @@ class _MyAppState extends State<MyApp> {
                         itemBuilder: (context, index) {
                           BookModel book = showList[index];
                           return Container(
+
                               padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
                               child: Row(
                                 children: [
@@ -83,19 +84,28 @@ class _MyAppState extends State<MyApp> {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        book.name.toString(),
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
+                                      SizedBox(
+                                        width : 230,
+                                        child: Text(
+                                          book.name.toString(),
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          softWrap: true,
+                                          // overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       const SizedBox(
                                         height: 10,
                                       ),
-                                      Text(
-                                        '- ${book.author.toString()}',
-                                        style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
+                                      SizedBox(
+                                        width : 230,
+                                        child: Text(
+                                          '- ${book.author.toString()}',
+                                          style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
+                                          softWrap: true,
+                                        ),
                                       )
                                     ],
                                   )
